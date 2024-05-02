@@ -1,0 +1,2431 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+
+@property --progress-value {
+    syntax: '<integer>';
+    inherits: false;
+    initial-value: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+}
+
+/*Signin page css start*/
+
+.logoImg {
+    position: fixed;
+    top: 104px;
+}
+
+.logoImg img {
+    width: 289px;
+}
+
+.yellotick-container {
+    position: fixed;
+    background-color: white;
+    inset: 280px 0;
+    z-index: 1;
+}
+
+.yellotick-container form {
+    display: flex;
+    align-items: center;
+}
+
+.input-container {
+    position: relative;
+}
+
+.input-container a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.input-container i {
+    font-size: 20px;
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    color: #CA1F3F;
+
+}
+
+.input-container p {
+    position: relative;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    letter-spacing: 0.01em;
+    text-align: center;
+    width: max-content;
+    position: relative;
+    left: 160px;
+}
+
+.input-container:nth-child(2) p {
+    left: 143px;
+}
+
+.yellotick-container-form input {
+    padding: 13px 27px;
+    border: 2px solid #ffbe00;
+    border-radius: 30px;
+    margin-bottom: .6rem;
+    font-size: 14px;
+    line-height: 16.94px;
+    font-weight: 400;
+    text-align: left;
+    letter-spacing: 0.01em;
+    width: 277px;
+    color: #858C83E5;
+
+}
+
+
+.yellotick-container-form input:focus {
+    font-size: 14px;
+    width: 277px;
+    border: 2px solid #ffbe00;
+}
+
+.yellotick-container-form label{
+    position: absolute;
+    top: 46px;
+    width: 100%;
+    right: -23px;
+    display: none;
+}
+
+.signin-footer {
+    background-color: black;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    height: 22%;
+    position: fixed;
+    bottom: 55px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.yellotick-container-form .signin-footer-btn {
+    position: fixed;
+    bottom: 60px;
+}
+
+.signin-footer-btn p {
+    color: white;
+    position: absolute;
+    top: 17%;
+    left: 20%;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 0;
+}
+
+.signin-footer-btn div {
+    font-size: 1rem;
+    font-weight: 500;
+    width: 15rem;
+    padding: 6%;
+    background: #CA1F3F;
+    color: white;
+    position: relative;
+}
+
+.signin-footer-btn div img {
+    width: 8%;
+    position: absolute;
+    right: 10%;
+}
+
+.mainbody#blur.active {
+    filter: blur(5px);
+    opacity: .5;
+    pointer-events: none;
+    user-select: none;
+    height: 100vh;
+    width: 100%;
+}
+.yellotick-container #form {
+    visibility: visible;
+}
+.yellotick-container #form.active {
+    visibility: hidden;
+}
+.yellotick-container #form .signin-footer-btn button i {
+    visibility: visible;
+    transition: none;
+}
+.yellotick-container #form .signin-footer-btn button i.active{
+    visibility: hidden;
+}
+
+.mainbody  .inside-footer {
+    position: fixed;
+    background-color: black;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    height: 160px;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+/*sign in page css end*/
+
+
+
+/*verification poprup*/
+
+
+
+/*verification page css start*/
+
+.maibnbody#blur.active {
+    height: 100vh;
+    width: 100%;
+    /* user-select: none; */
+}
+
+.overlay {
+    padding: 10px;
+    width: 317px;
+    height: 314px;
+    border: none;
+    border-radius: 35px;
+    background: white;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.overlay .card-body .closemark {
+    position: absolute;
+    top: 5%;
+    right: 6%;
+    font-size: 1.3rem;
+    color: darkgray;
+}
+
+.overlay .card-body .card-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24.2px;
+    text-align: center;
+}
+
+.overlay .card-body .card-text {
+    font-weight: 400;
+    font-size: 12px;
+    text-align: center;
+    line-height: 14.52px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* .otpboxcontainer{
+    margin: 1.5rem 0;
+} */
+.otpboxcontainer .otpbox {
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    border: none;
+    background: #F1F1F1;
+    border-radius: 6px;
+}
+
+.otpboxcontainer .otpbox:focus {
+    border: 2px solid #FFC40C;
+    background: white;
+}
+
+.otpboxcontainer input:focus {
+    border: 1px solid #FFC40C;
+    background: white;
+}
+
+.otpboxcontainer :first-child:focus,
+.otpboxcontainer :first-child:focus~.otpbox {
+    border: 2px solid #FFC40C;
+    background: white;
+}
+
+
+.imagecontainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.imagecontainer#otpcard.active {
+    visibility: visible;
+    opacity: 1;
+    z-index: 5;
+}
+
+.resendbtn {
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 178px;
+    height: 39px;
+    margin-top: 1rem;
+    position: relative;
+    border-radius: 33px;
+}
+
+.resendbtn p {
+
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.36px;
+    text-align: center;
+    color: white;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.resendbtn i {
+    font-size: 2rem;
+    position: absolute;
+    color: white;
+    right: 4%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* verification page css end */
+
+
+
+
+
+
+/*Admin page css start*/
+.scrollbody {
+    height: 100vh;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.scrollbody#blur.active {
+    filter: blur(10px);
+    pointer-events: none;
+    user-select: none;
+}
+
+.merchangtopdiv {
+    background: linear-gradient(180deg, #CA1F3F 59%, #98001C 100%);
+    height: 244px;
+    width: 100%;
+    position: relative;
+    top: 0;
+}
+
+.merchangtopdiv .avatarimg {
+    position: absolute;
+    z-index: 5;
+    top: 13%;
+}
+
+.bell-icon-div {
+    height: 53px;
+    width: 53px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    position: absolute;
+    top: 58px;
+    right: 6%;
+}
+
+.bell-icon-div .shakebell {
+    -webkit-animation: ring 4s ease-in-out infinite;
+    -webkit-transform-origin: 50% 4px;
+    -moz-animation: ring 4s ease-in-out infinite;
+    -moz-transform-origin: 50% 4px;
+    animation: ring 4s ease-in-out infinite;
+    transform-origin: 50% 4px;
+}
+
+@keyframes ring {
+    0% {
+        -webkit-transform: rotateZ(0);
+    }
+
+    1% {
+        -webkit-transform: rotateZ(30deg);
+    }
+
+    3% {
+        -webkit-transform: rotateZ(-28deg);
+    }
+
+    5% {
+        -webkit-transform: rotateZ(34deg);
+    }
+
+    7% {
+        -webkit-transform: rotateZ(-32deg);
+    }
+
+    9% {
+        -webkit-transform: rotateZ(30deg);
+    }
+
+    11% {
+        -webkit-transform: rotateZ(-28deg);
+    }
+
+    13% {
+        -webkit-transform: rotateZ(26deg);
+    }
+
+    15% {
+        -webkit-transform: rotateZ(-24deg);
+    }
+
+    17% {
+        -webkit-transform: rotateZ(22deg);
+    }
+
+    19% {
+        -webkit-transform: rotateZ(-20deg);
+    }
+
+    21% {
+        -webkit-transform: rotateZ(18deg);
+    }
+
+    23% {
+        -webkit-transform: rotateZ(-16deg);
+    }
+
+    25% {
+        -webkit-transform: rotateZ(14deg);
+    }
+
+    27% {
+        -webkit-transform: rotateZ(-12deg);
+    }
+
+    29% {
+        -webkit-transform: rotateZ(10deg);
+    }
+
+    31% {
+        -webkit-transform: rotateZ(-8deg);
+    }
+
+    33% {
+        -webkit-transform: rotateZ(6deg);
+    }
+
+    35% {
+        -webkit-transform: rotateZ(-4deg);
+    }
+
+    37% {
+        -webkit-transform: rotateZ(2deg);
+    }
+
+    39% {
+        -webkit-transform: rotateZ(-1deg);
+    }
+
+    41% {
+        -webkit-transform: rotateZ(1deg);
+    }
+
+    43% {
+        -webkit-transform: rotateZ(0);
+    }
+
+    100% {
+        -webkit-transform: rotateZ(0);
+    }
+}
+
+
+.tooglebar-icon {
+    position: absolute;
+    right: 6%;
+    top: 115px;
+    width: 55%;
+    color: white;
+}
+
+.tooglebar-icon p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 23px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.toggle-icon-div {
+    height: 53px;
+    width: 53px;
+    border-radius: 50%;
+    background: #CA1F3F;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.merchantmiddiv {
+    border-radius: 35px 35px 0 0;
+    position: relative;
+    top: -57px;
+    z-index: 1;
+    background: white;
+    height: 74px;
+}
+
+.merchantmiddiv .previevdiv {
+    position: absolute;
+    left: 38%;
+    top: 13%;
+}
+
+.merchantmiddiv .previevdiv p {
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 0;
+    margin-left: 7px;
+    margin-top: 4%;
+}
+
+.beelicondiv {
+    position: absolute;
+    right: 6%;
+    top: 2%;
+    height: 53px;
+    width: 53px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.beelicondiv img {
+    width: 100%;
+    margin-top: 12px;
+    animation: round 4s ease-in-out infinite;
+}
+
+@keyframes round {
+    0% {}
+}
+
+.main-view-container {
+    position: relative;
+    top: -63px;
+    width: 92%;
+    right: 0;
+    background: #F1F1F1;
+    padding: 0;
+    margin-right: 0;
+    height: 518px;
+    border-radius: 32px 0 0 32px;
+    z-index: 2;
+}
+
+
+.main-view-container .view-text {
+    width: max-content;
+    position: relative;
+    left: 25%;
+}
+
+.main-view-container img {
+    width: 100%;
+}
+
+.main-view-container .view-text p:first-child {
+    margin-bottom: 0;
+    font-size: 50px;
+    font-weight: 700;
+    color: #CA1F3F;
+    height: 60px;
+}
+
+.main-view-container .view-text p:first-child span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.main-view-container .view-text p:nth-child(2) {
+    font-size: 12px;
+    font-weight: 400;
+    color: #858C83E5;
+}
+
+.colordiv {
+    height: 150px;
+    width: 150px;
+    border-radius: 20px;
+    background: linear-gradient(180deg, #FFC40C 0%, #FFD961 100%);
+    box-shadow: 0px 2px 5px 0px #26334D08;
+    text-align: center;
+}
+
+.colordiv p {
+    font-size: 24px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 0;
+    margin-top: -5px;
+}
+
+.colordiv .colortoptext {
+    height: 2rem;
+    width: 80%;
+}
+
+.colordiv .colortoptext p {
+    margin-bottom: 0;
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+}
+
+.colordiv .colortoptext img{
+    width: max-content;
+    margin-top: -18px;
+}
+
+
+.colordiv .colortoptext .tripledotoftext {
+    width: max-content;
+    position: relative;
+    top: -7px;
+}
+
+.icon-with-btn img {
+    width: 25%;
+}
+
+.colorbtn {
+    width: 81px;
+    background: #E8B001;
+    height: 30px;
+    border-radius: 15px;
+}
+
+.colorbtn p {
+    font-size: 10px;
+    font-weight: 700;
+    margin-top: 0;
+    color: white;
+}
+
+.colordiv:nth-child(2) {
+    background: linear-gradient(180deg, #CA1F3F 0%, #B80C2D 100%);
+    box-shadow: 0px 2px 5px 0px #26334D08;
+}
+
+.colordiv:nth-child(2) .colorbtn {
+    background: #941029;
+}
+
+.colordiv:nth-child(3) {
+    background: linear-gradient(180deg, #29CC39 0%, #ECECEC 100%);
+    box-shadow: 0px 2px 5px 0px #26334D08;
+}
+
+.colordiv:nth-child(3) .colorbtn {
+    background: #13BF24;
+}
+
+.colordiv:nth-child(4) {
+    background: linear-gradient(180deg, #33BFFF 0%, #EEEEEE 100%);
+    box-shadow: 0px 2px 5px 0px #26334D08;
+}
+
+.colordiv:nth-child(4) .colorbtn {
+    background: #3AC1FF;
+
+}
+
+/*tooltip popp*/
+
+#orangemenuList {
+    position: absolute;
+    right: 10.5rem;
+    top: 71%;
+    z-index: 6;
+    background: white;
+    border-radius: 15%;
+}
+
+#orangemenuList ul {
+    list-style: none;
+    background: white;
+    padding: 14px;
+    width: 162px;
+    height: 160px;
+    background-image: url("./Assest/bottomimgeline.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: 107px;
+    padding-top: 30px;
+    /* overflow: hidden; */
+    border-radius: 16px 16px 30px 36px;
+    position: absolute;
+}
+
+#orangemenuList ul li {
+    width: 80%;
+}
+
+#orangemenuList ul:after {
+    content: " ";
+    position: absolute;
+    right: 30px;
+    top: -13px;
+    border-top: none;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: 15px solid white;
+}
+
+#orangemenuList ul li p {
+    color: #CA1F3F;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+#orangemenuList ul li img {
+    position: absolute;
+    right: 12%;
+    width: 20px;
+}
+
+
+.tooltip-step p {
+    height: 2px;
+    width: 100px;
+}
+
+
+/*Admin page css end*/
+
+
+
+
+/*Goto homepage page css start*/
+
+.backimg {
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    ;
+    filter: blur(5px);
+}
+
+.list-style {
+    position: relative;
+    top: 10%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+    width: 20rem;
+    gap: 37px;
+}
+
+.positioniconbarlist {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+
+.inside-footer {
+    position: absolute;
+    background-color: black;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    height: 160px;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.insidefootermaindiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.insidefooterbtn {
+    width: 80%;
+    height: 3rem;
+    background: linear-gradient(90deg, #000000 0%, #CA1F3F 83.5%, #CA1F3F 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    border-radius: 2rem;
+    justify-content: center;
+    position: relative;
+}
+
+.insidefooterbtn i {
+    font-size: 2rem;
+    color: white;
+    position: absolute;
+    top: 20%;
+    right: 7%;
+}
+
+.absoltepost {
+    position: absolute;
+    left: -10%;
+}
+
+.icon-bar {
+    background: rgb(255, 255, 255);
+    width: 275px;
+    height: 69px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.icon-bar p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.36px;
+    margin-bottom: 0;  
+    margin-left: 85px;  
+}
+
+.outer-iconbar {
+    background: white;
+    height: 91px;
+    width: 91px;
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 4px 0px #00000040;
+
+}
+
+.inner-icon-bar {
+    background: #CA1F3F;
+    width: 76px;
+    height: 76px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.inner-icon-bar i {
+    color: white; 
+    font-size: 32px;
+}
+
+.circleicon {
+    position: absolute;
+    width: 31px;
+    right: -5%;
+    height: 31px;
+    background: black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circleicon img {
+    transform: rotate(90deg);
+    width: 22px;
+    height: 22px;
+}
+
+/*Goto homepage css end*/
+
+
+
+/*adminscreen page start*/
+
+.adminscreentopdiv {
+    background: linear-gradient(180deg, #CA1F3F 59%, #98001C 100%);
+    height: 10rem;
+    position: relative;
+    top: 0;
+}
+
+.adminscreentopdiv .avatarimg {
+    position: absolute;
+    z-index: 5;
+    top: 13%;
+}
+
+.adminscreentopdiv .bell-icon-div {
+    height: 53px;
+    width: 53px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    position: absolute;
+    top: 43px;
+    right: 1rem;
+}
+
+.adminscreentopdiv .tooglebar-icon {
+    position: absolute;
+    top: 43px;
+    left: 1rem;
+    width: 56%;
+    color: white;
+}
+
+.adminscreentopdiv .tooglebar-icon .textcontainer {
+    width: 10rem;
+    position: relative;
+    top: 6px;
+}
+
+.adminscreentopdiv .tooglebar-icon p {
+    position: relative;
+    left: 9%;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 23px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.adminscreentopdiv .toggle-icon-div {
+    height: 53px;
+    width: 53px;
+    border-radius: 50%;
+    background: #CA1F3F;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.adminmiddiv {
+    border-radius: 35px 35px 0 0;
+    height: 60%;
+    position: relative;
+    top: -3rem;
+    z-index: 1;
+}
+
+.adminmiddiv .maddlist {
+    position: relative;
+    top: 7%;
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+    gap: 15px;
+}
+
+.adminmiddiv .maddlist li {
+    width: 264px;
+    height: 55px;
+    border-radius: 25px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.adminmiddiv .maddlist li div {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #33BFFF;
+}
+
+.adminmiddiv .maddlist li:nth-child(3) div {
+    background: #FF603F;
+}
+
+.adminmiddiv .maddlist li:nth-child(4) div,
+.adminmiddiv .maddlist li:nth-child(5) div {
+    background: #CA73FF;
+}
+
+.adminmiddiv .maddlist li p {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.admibottomdiv {
+    height: 110px;
+    position: fixed;
+    bottom: 0;
+    border-radius: 35px 35px 0 0;
+}
+
+.admibottomdiv .midcircleupper {
+    height: 112px;
+    width: 112px;
+    position: absolute;
+    background: #F4F4F4;
+    border-radius: 50%;
+    bottom: 35%;
+    box-shadow: 0px 4px 4px 0px #00000040;
+
+}
+
+.admibottomdiv .midcircleinner {
+    height: 90px;
+    width: 90px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.admibottomdiv .midcircleinner img {
+    width: 63px;
+    margin-top: 0.5rem;
+}
+
+/*tooltip popp*/
+
+#viewprofile-toogle {
+    position: absolute;
+    left: 0.4rem;
+    top: 6.4rem;
+    z-index: 6;
+    background: white;
+    border-radius: 15%;
+}
+
+#viewprofile-toogle ul {
+    list-style: none;
+    background: white;
+    padding: 0;
+    width: 162px;
+    border-radius: 16px 16px 30px 36px;
+    position: absolute;
+}
+
+#viewprofile-toogle ul li {
+    width: 65%;
+}
+
+#viewprofile-toogle ul:after {
+    content: " ";
+    position: absolute;
+    left: 27px;
+    top: -14px;
+    border-top: none;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: 15px solid white;
+}
+
+#viewprofile-toogle ul li p {
+    color: #CA1F3F;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+#viewprofile-toogle ul li img {
+    position: absolute;
+    right: 1rem;
+    width: 20px;
+}
+
+#viewprofile-toogle ul li i{
+    position: absolute;
+    font-size: 20px;
+    color: #CA1F3F;
+    right: 1rem;
+}
+
+
+/*adminscreen page end*/
+
+
+
+/*attendence page css start*/
+.attendence {
+    position: absolute;
+    top: 30%;
+    left: 8%;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.attendence#attendencepopup.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.attendence .overlay {
+    padding: 10px;
+    width: 317px;
+    height: 314px;
+    border: none;
+    border-radius: 35px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.attendence .overlay .card-body .card-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.attendence .overlay .card-body .card-text {
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.attendence .overlay .card-body .card-title {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.attendence .overlay .card-body .resendbtn {
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 178px;
+    height: 39px;
+    position: relative;
+    border-radius: 33px;
+}
+
+.attendence .overlay .card-body .resendbtn p {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+/*attendence page css end*/
+
+/*Scorecard page css start*/
+
+.scorecard {
+    position: absolute;
+    top: 30%;
+    left: 8%;
+    transform: translate(-50%, 50%);
+    visibility: hidden;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.scorecard#scorecard.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.scorecard .overlay {
+    padding: 10px;
+    width: 317px;
+    height: 314px;
+    border: none;
+    border-radius: 35px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.scorecard .overlay .card-body .card-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.scorecard .overlay .card-body .card-text {
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.scorecard .overlay .card-body .card-title {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.scorecard .overlay .card-body .scoreboxcontainer h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #CA1F3F;
+}
+
+.scorecard .overlay .card-body .scoreboxcontainer p {
+    font-size: 10px;
+    font-weight: 600;
+    color: #858C83A6;
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+.scorecard .overlay .card-body .resendbtn {
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 208px;
+    height: 39px;
+    margin-top: 0;
+    position: relative;
+    border-radius: 33px;
+}
+
+.scorecard .overlay .card-body .resendbtn p {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.scorecard .overlay .card-body p {
+    font-size: 13px;
+    font-weight: 600;
+    color: black;
+}
+
+/*Scorecard page css end*/
+
+
+/*deals closed page css start*/
+.dealcard {
+    position: absolute;
+    top: 30%;
+    left: 8%;
+    transform: translate(-50%, 50%);
+    visibility: hidden;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.dealcard#dealclosed.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.dealcard .overlay {
+    padding: 10px;
+    width: 317px;
+    height: 314px;
+    border: none;
+    border-radius: 35px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.dealcard .overlay .card-body .card-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+
+.dealcard .overlay .card-body .resendbtn {
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 39px;
+    margin-top: 0;
+    position: relative;
+    border-radius: 33px;
+}
+
+
+.dealcard .overlay .card-body .resendbtn p {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.dealcardcontainer {
+    width: 15rem;
+}
+
+
+
+.dealcardcontainer p {
+    margin-bottom: 0;
+    margin-top: 0;
+    color: #CA1F3F;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.dealcardcontainer:first-child p{
+    color: #858C83E5;
+}
+.dealcardcontainer:nth-of-type(even) p{
+    color: #FFC40C;
+
+}
+/*deals closed page css end*/
+
+
+
+/*percentage card css start*/
+
+
+
+.dealcardpercentage {
+    position: absolute;
+    top: 30%;
+    left: 8%;
+    transform: translate(-50%, 50%);
+    visibility: hidden;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.dealcardpercentage#dealspending.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.dealcardpercentage .overlay {
+    padding: 10px;
+    width: 317px;
+    height: 314px;
+    border: none;
+    border-radius: 35px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.dealcardpercentage .overlay .card-body .card-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+
+.dealcardpercentage .overlay .card-body .resendbtn {
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 39px;
+    margin-top: 0;
+    position: relative;
+    border-radius: 33px;
+}
+
+.dealcardpercentage .overlay .card-body .resendbtn p {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.dealcardpercentagecontainer {
+    width: 220px;
+}
+
+.dealcardpercentagecontainer p {
+    margin-bottom: 0;
+    margin-top: 0;
+    color: #CA1F3F;
+    font-size: 24px;
+    font-weight: 700;
+}
+.circular-progress{
+    position: relative;
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    background: conic-gradient(#7d2ae8 3.6deg, #ededed 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circular-progress::before{
+    content: "";
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.progress-value{
+    position: relative;
+    font-size: 10px;
+    font-weight: 600;
+    color: #858C83;
+    text-align: center;
+}
+
+/*percentage card css end*/
+
+
+
+/*info page css start*/
+
+.mainlogo img {
+    position: absolute;
+    top: 55px;
+    width: 289px;
+}
+
+.mainlogo img:nth-child(2){
+    top: 164px;
+}
+
+.input-container-form {
+    background-color: #000000;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    position: relative;
+    top: 225px;
+    gap: 1.5rem;
+}
+
+.input-container1-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+}
+
+
+
+
+.pagination {
+    position: relative;
+    width: 90%;
+    top: 170px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 5px;
+}
+
+.pagination .number {
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    border: 2px solid #CA1F3F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination .bar {
+    width: 40px;
+    height: 1px;
+    background-color: #D9D9D9;
+    border-radius: 5px;
+}
+
+.pagination p {
+    position: absolute;
+    text-align: center;
+    top: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.pagination p.active{
+    color: #CA1F3F;
+}
+
+.pagination .number.active {
+    background: #CA1F3F;
+}
+
+.pagination .bar.active {
+    background: #CA1F3F;
+    border: 1px solid #CA1F3F;
+}
+
+
+.input-container-form .multistep-form {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-container-form .multistep-form .tab {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    flex-direction: column;
+    gap: 20px;
+    visibility: hidden;
+}
+
+.input-container-form .multistep-form .tab.active {
+    visibility: visible;
+    position: absolute;
+    top: 10px;
+}
+
+.input-container-form .formtitle {
+    color: white;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: -10rem;
+    margin-top: 1rem;
+}
+
+.input-container-form input {
+    display: block;
+    width: 277px;
+    height: 50px;
+    padding: 25px;
+    border: none;
+    border-radius: 30px;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+.input-container-form input:focus {
+    color: #CA1F3F;
+    border-style: none;
+}
+
+.input-container-form .iamge-text {
+    position: relative;
+    left: 2%;
+}
+
+.input-container-form .iamge-text img {
+    position: absolute;
+    left: 2rem;
+}
+
+.input-container-form .iamge-text p {
+    margin-left: -2rem;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.input-container-form .iamge-text p span {
+    color: #FFC40C;
+}
+
+.requestbtn {
+    background-color: rgba(202, 31, 63, 1);
+    text-align: center;
+    color: white;
+    height: 3rem;
+    width: 16rem;
+    border-radius: 33px;
+}
+
+.requestbtn img {
+    margin-left: 7px;
+}
+
+.input-container1-form i.fa-star {
+    position: absolute;
+    right: 20%;
+}
+
+.input-container1-form i.fa-star.star-with-image {
+    right: 3.5rem;
+}
+
+.input-container1-form .socilalink {
+    padding-left: 8rem;
+}
+
+.input-container1-form .paymenticon {
+    position: absolute;
+    left: 1rem;
+}
+
+.input-container1-form .imageupload {
+    height: 317px;
+    width: 313px;
+}
+
+.input-container1-form .dropdown-list {
+    height: 25px;
+    width: 25px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    right: 26px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+
+
+
+.businessmenuList {
+    position: absolute;
+    right: -7px;
+    top: 60%;
+    z-index: 6;
+    background: white;
+    border-radius: 15% ;
+    background-image: url("./Assest/bottomimgeline.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: 215px;
+    height: 284px;
+}
+
+.businessmenuList ul {
+    list-style: none;
+    background: white;
+    padding: 10px;
+    width: 200px;
+    height: 190px;
+    margin-top: 1rem;
+    border-radius: 16px 16px 30px 36px;
+    position: relative;
+    gap: 10px;
+    overflow-y: scroll;
+}
+
+.businessmenuList ul li {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-wrap: wrap;
+    border-bottom: 1px solid darkgray;
+}
+
+.businessmenuList ul li input[type="radio"] {
+    width: 30px;
+}
+
+.businessmenuList ul:first-child {
+    margin-top: 0;
+}
+
+.businessmenuList .tooltip-arrow {
+    position: absolute;
+    right: 30px;
+    top: -14px;
+    border-top: none;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: 15px solid white;
+}
+
+.businessmenuList ul li p {
+    color: black;
+    font-size: 10px;
+    font-weight: 700;
+    margin-bottom: 0;
+    text-align: start   ;
+}
+
+.businessmenuList img {
+    position: absolute;
+    bottom: -30%;
+    right: 0%;
+    width: 100%;
+}
+
+
+.businessmenuList ul li .horizontal-line {
+    height: 2px;
+    width: 180px;
+}
+
+
+.businessmenuList .radio-btn-div {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+
+
+.request .form-btn .custom-button {
+    display: block;
+    cursor: pointer;
+    color: white;
+    margin: 0 auto;
+    position: relative;
+    text-decoration: none;
+    border-radius: 34px;
+    overflow: hidden;
+    padding: 2px;
+    isolation: isolate;
+    width: 277px;
+    height: 50px;
+    text-align: center;
+    background: linear-gradient(90deg, #000000 0%, #A81A34 49.82%, #CA1F3F 100%);
+
+}
+
+
+
+.input-container-form input:focus {
+    color: #CA1F3F;
+    border-style: none;
+}
+
+.requestbtn {
+    background-color: rgba(202, 31, 63, 1);
+    text-align: center;
+    color: white;
+    height: 3rem;
+    width: 16rem;
+    border-radius: 33px;
+}
+
+.requestbtn img {
+    margin-left: 7px;
+}
+
+.input-container1-form i.fa-star {
+    position: absolute;
+    right: 2rem;
+}
+
+/*Details page css start*/
+
+
+
+
+
+/*custom button css*/
+
+.custom-button {
+    display: block;
+    cursor: pointer;
+    color: white;
+    margin: 0 auto;
+    position: relative;
+    text-decoration: none;
+    border-radius: 34px;
+    overflow: hidden;
+    padding: 2px;
+    isolation: isolate;
+    width: 260px;
+    height: 54px;
+    text-align: center;
+    background: linear-gradient(90deg, #000000 0%, #A81A34 49.82%, #CA1F3F 100%);
+}
+
+.custom-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400%;
+    height: 100%;
+    background: linear-gradient(115deg, #d1d1d1, #CA1F3F, #a7bfde);
+    background-size: 25% 100%;
+    animation: an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop 0.75s linear infinite;
+    animation-play-state: running;
+    translate: -5% 0%;
+    transition: translate 0.25s ease-out;
+}
+
+.custom-button:hover::before {
+    animation-play-state: running;
+    transition-duration: 0.75s;
+    translate: 0% 0%;
+}
+
+@keyframes an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop {
+    to {
+        transform: translateX(-25%);
+    }
+}
+
+.custom-button span {
+    position: relative;
+    display: block;
+    padding-left: 42px;
+    padding-top: 7px;
+    font-size: 1.1rem;
+    background: linear-gradient(90deg, #000000 21%, #A81A34 70.82%, #CA1F3F 100%);;
+    border-radius: 100px;
+    height: 100%;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.custom-button i {
+    position: absolute;
+    font-size: 12px;
+    top: 10px;
+    left: 13px;
+    height: 28px;
+    width: 50px;
+    background: white;
+    border-radius: 18px;
+    color: black;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* transition: linear .5s */
+}
+
+.custom-button i:active {
+    transform: scale(0.85);
+}
+
+.beelicondiv i {
+    font-size: 30px;
+    color: #ca1f3f;
+    transition: transform 0.3s;
+}
+
+.beelicondiv:hover i {
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.goHome {
+    background-image: url("./Assest/Merchant Home.png");
+    position: relative;
+    background-size: cover;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.goHome:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .5);
+}
+
+
+
+
+/*business detail page css start*/
+
+.businessdetailmenuList {
+    position: absolute;
+    right: -7px;
+    top: 28%;
+    z-index: 6;
+    background: white;
+    border-radius: 15%;
+    background-image: url(./Assest/bottomimgeline.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-y: 213px;
+    height: 270px;
+}
+
+.businessdetailmenuList ul {
+    list-style: none;
+    background: white;
+    padding: 0;
+    width: 200px;
+    height: 225px;
+    border-radius: 16px ;
+    position: relative;
+    gap: 10px;
+    overflow-y: scroll;
+ 
+}
+
+.businessdetailmenuList ul li {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-wrap: wrap;
+}
+
+.businessdetailmenuList ul li input[type="radio"] {
+    width: 30px;
+}
+
+.businessdetailmenuList ul:first-child {
+    margin-top: 0;
+}
+
+.businessdetailmenuList .tooltip-arrow {
+    position: absolute;
+    right: 30px;
+    top: -14px;
+    border-top: none;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: 15px solid white;
+}
+
+.businessdetailmenuList ul li p {
+    color: black;
+    font-size: 10px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.businessdetailmenuList img {
+    position: absolute;
+    bottom: -17%;
+    right: 0%;
+    width: 100%;
+}
+
+
+.businessdetailmenuList ul li .horizontal-line {
+    height: 2px;
+    width: 180px;
+}
+
+
+.businessdetailmenuList .radio-btn-div {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.businessdetail-tooltip-step p {
+    height: 2px;
+    width: 180px;
+    background-color: darkgray;
+}
+
+
+/*business detail page css end*/
+
+
+
+/*onbprg page css start*/
+.onbprog {
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.onboardtopdiv {
+    background: linear-gradient(180deg, #CA1F3F 59%, #98001C 100%);
+    height: 10rem;
+    position: relative;
+    top: 0;
+}
+
+.onboardtopdiv .avatarimg {
+    position: absolute;
+    z-index: 5;
+    top: 13%;
+}
+
+.onboardtopdiv .bell-icon-div {
+    height: 53px;
+    width: 53px;
+    border-radius: 50%;
+    background: black;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    position: absolute;
+    top: 45px;
+    right: .5rem;
+}
+
+.onboardtopdiv .tooglebar-icon {
+    position: absolute;
+    top: 45px;
+    left: 1rem;
+    width: 91%;
+    color: white;
+}
+
+.onboardtopdiv .tooglebar-icon .textcontainer {
+    width: 20rem;
+    position: relative;
+    top: 6px;
+}
+
+.onboardtopdiv .tooglebar-icon p {
+    position: relative;
+    left: 5%;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 23px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.onboardtopdiv .toggle-icon-div {
+    height: 53px;
+    width: 53px;
+    border-radius: 50%;
+    background: #CA1F3F;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+
+.onboardmiddiv {
+    border-radius: 35px 35px 0 0;
+    height: 100%;
+    position: relative;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F1F1F1 100%);
+    top: -2rem;
+    z-index: 1;
+}
+
+.onboardmiddiv img {
+    position: absolute;
+    top: 3rem;
+}
+
+.onboardmiddiv .yellowdiv {
+    margin-top: 3rem;
+    height: 150px;
+    width: 310px;
+    border-radius: 25px;
+    background: linear-gradient(180deg, #FFC40C 0%, #EEECE5 100%);
+    box-shadow: 0px 4px 4px 0px #00000040;
+    text-align: center;
+}
+
+.onboardmiddiv .yellowdiv .headingtext {
+    margin-top: -2px;
+    width: 250px;
+    margin-bottom: 10px;
+}
+
+.onboardmiddiv .yellowdiv .headingtext p {
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0;
+}
+
+
+.onboardmiddiv .yellowdiv .headingtext input[type="radio"] {
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    outline: none;
+    border: 3px solid #ECB200;
+    background: white;
+    margin-bottom: 0;
+}
+
+.onboardmiddiv .yellowdiv .headingtext input[type='radio']:before {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 60%;
+    margin: 20% auto;
+    border-radius: 50%;
+    outline: 2px solid white;
+}
+
+.onboardmiddiv .yellowdiv .headingtext input[type='radio']:checked:before {
+    background: #ECB200;
+}
+
+.onboardmiddiv .yellowdiv .headingtext input[type='radio']:checked {
+    border-color: #ECB200;
+}
+
+
+.onboardmiddiv .yellowdiv p {
+    font-size: 24px;
+    font-weight: 800;
+    color: white;
+}
+
+.onboardmiddiv .yellowdiv p span {
+    font-size: 8px;
+    font-weight: 500;
+    color: white;
+}
+
+.onboardmiddiv .termandco {
+    width: 250px;
+}
+
+.onboardmiddiv .termandco .yellowdivbtn {
+    width: 118px;
+    background: #FFC40C;
+    height: 30px;
+    border-radius: 15px;
+}
+
+.onboardmiddiv .termandco p {
+    font-size: 10px;
+    font-weight: 400;
+    color: #E9B206;
+    margin-bottom: 0;
+}
+
+.onboardmiddiv .yellowdivbtn p {
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+}
+
+.onboardmiddiv .yellowdiv:nth-of-type(1) {
+  position: absolute;
+  top: 4rem;
+ }
+
+.onboardmiddiv .yellowdiv:nth-of-type(2) {
+    position: absolute;
+    top: 15rem;
+}
+
+
+.onboardmiddiv .yellowdiv:nth-of-type(3) {
+    position: absolute;
+    top: 26rem;
+    background: linear-gradient(180deg, #000000 0%, #CA1F3F 100%);
+}
+
+.onboardmiddiv .yellowdiv:nth-of-type(3) .yellowdivbtn {
+    background: #CA1F3F;
+}
+
+.onboardmiddiv .yellowdiv:nth-of-type(3) .termandco p {
+    color: white;
+}
+
+.onboardmiddiv .yellowdiv:nth-of-type(3) .headingtext input[type="radio"] {
+    border: 3px solid #CA1F3F;
+}
+
+.onboardmiddiv .yellowdiv:nth-of-type(3) .headingtext input[type='radio']:checked:before {
+    background: #CA1F3F;
+
+} 
+
+.onboardmiddiv .collectbtndiv {
+    position: relative;
+    top: 40rem;
+    height: 50px;
+    width: 310px;
+    border-radius: 33px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+
+.onboardmiddiv .collectbtndiv  i {
+    position: absolute;
+    top: 10px;
+    left: 13px;
+    height: 28px;
+    width: 50px;
+    background: white;
+    border-radius: 15px;
+    color: black;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.onboardmiddiv .collectbtndiv a i:active {
+    transform: scale(0.85);
+}
+
+.onboardmiddiv .collectbtndiv a i {
+    font-size: 17px;
+    color: black;
+    transition: transform 0.3s;
+}
+
+
+/*onbprg page css end*/
+
+
+
+/*scan page css start */
+.scanmiddiv {
+    border-radius: 35px 35px 0 0;
+    height: 15%;
+    position: relative;
+    background: white;
+    top: -2rem;
+    z-index: 1;
+}
+
+.scanmiddiv img {
+    position: absolute;
+    top: 3rem;
+}
+
+.scanbottomdiv {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #EEEEEE 0%, #FFFFFF 100%);
+    margin-top: -2rem;
+    z-index: 2;
+    border-radius: 33px;
+}
+
+.scanbottomdiv .scantexttop {
+    width: 100%;
+    margin-top: 5rem;
+}
+
+.scanbottomdiv  img{
+    margin-top: 2.5rem;
+}
+.scanbottomdiv .scantexttop p:first-child {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.scanbottomdiv .scantexttop p:nth-child(2) {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.scanbottomdiv p {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.scanbottomdiv .scanimgdiv {
+    width: 211px;
+    height: 211px;
+    background: linear-gradient(180deg, rgba(106, 110, 104, 0.21) 0%, rgba(255, 255, 255, 0.21) 100%);
+}
+.scanbottomdiv .scanimgdiv img{
+    margin-top: 0;
+}
+.scanbottomdiv .upitext {
+    width: 90%;
+}
+
+.scanbottomdiv .upitext p, .scanbottomdiv .upitext  span {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.scanbottomdiv .upitext .copydiv {
+    width: 53px;
+    height: 53px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    margin-left: 1rem;
+}
+.scanbottomdiv .upitext .copydiv img{
+    margin-top: 0;
+}
+/*scan page css end */
+
+
+
+/* */
+
+
+.okimagecontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+
+.okimagecontainer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./Assest/screenblur.png);
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    filter: blur(5px);
+    opacity: .9;
+}
+
+.okimagecontainer .overlay {
+    padding: 10px;
+    width: 317px;
+    height: 314px;
+    border: none;
+    border-radius: 35px;
+    z-index: 1;
+}
+
+.okimagecontainer .overlay .card-body .card-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.okimagecontainer .overlay .card-body .card-text {
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.okimagecontainer .overlay .card-body .otpboxcontainerimg{
+    margin: 0;
+}
+.okimagecontainer .otpboxcontainer .otpbox {
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    border: none;
+    background: #F1F1F1;
+    border-radius: 6px;
+}
+
+.okimagecontainer .otpboxcontainer .otpbox:focus {
+    border: 2px solid #FFC40C;
+    background: white;
+}
+
+.okimagecontainer .otpboxcontainer input:focus {
+    border: 1px solid #FFC40C;
+    background: white;
+}
+
+.okimagecontainer .otpboxcontainer :first-child:focus~.otpbox {
+    border: 2px solid #FFC40C;
+    background: white;
+}
+
+.okimagecontainer .overlaybtn {
+    background: #CA1F3F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 260px;
+    height: 39px;
+    position: relative;
+    border-radius: 33px;
+}
+
+
+.okimagecontainer .overlaybtn p {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.okimagecontainer .overlaybtn img {
+    position: absolute;
+    margin-right: -13rem;
+}
+
+.okimagecontainer .resendbtn {
+    background: #CA1F3F;
+    width: 260px;
+    height: 39px;
+    position: relative;
+    border-radius: 33px;
+}
+
+.okimagecontainer .resendbtn p {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.okimagecontainer .resendbtn img {
+    position: absolute;
+    right: 8%;
+}
+
+
+@media screen and (max-height: 932px) and (min-height : 844px) {
+    .input-container-form {
+        position: absolute;
+        bottom: 0;
+    }
+}

@@ -1,0 +1,165 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Verification</title>
+  <style>
+    .stars i {
+      color: #e6e6e6;
+      font-size: 40px;
+      cursor: pointer;
+      transition: color 0.2s ease;
+
+
+    }
+
+    .stars i.active {
+      background-image: linear-gradient(180deg, #FFC40C 0%, #FFF2C9 100%);
+      -webkit-background-clip: text;
+      /* For Safari */
+      background-clip: text;
+      color: transparent;
+
+    }
+
+    .card .tab {
+      position: absolute;
+      visibility: hidden;
+    }
+
+    .card .tab.active {
+      visibility: visible;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="okimagecontainer">
+    <div class="card overlay">
+      <div class="tab active">
+        <div class="card-body d-flex flex-column justify-content-center align-items-center ">
+          <h5 class="card-title mt-3" style="font-size: 30px; font-weight: 600;">Yayyy!</h5>
+          <p class="card-text " style="font-size: 13px; font-weight: 700;color: #13BF24;margin-top: 10px;
+      ">MERCID_12497 is created.
+            <br>You Have Completed All Steps
+          </p>
+          <div class="otpboxcontainerimg d-flex align-items-center justify-content-center mb-3">
+            <img src="./Assest/Brand-Tic 2.png" alt="">
+          </div>
+          <div id="timerbtn" class="overlaybtn" onclick="slide()">
+            <p>Send Request For Avatar</p>
+            <img src="./Assest/Vector.svg" alt="">
+          </div>
+          <div id="resendbtn" class="resendbtn d-flex align-items-center justify-content-center " onclick="slide()">
+            <p>Publish With Photo</p>
+            <img src="./Assest/Vector.svg" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="tab">
+        <div class="card-body d-flex flex-column justify-content-center align-items-center "
+          style="gap: 2rem;">
+          <h5 class="card-title" style="font-size: 30px; font-weight: 600;line-height: 37px;">Request <br> Sent!</h5>
+          <p class="card-text" style="font-size: 12px; font-weight: 500;color: #13BF24;
+        ">Avatar Will Be Uploaded On This <br>Profile Within 3 Days!</p>
+
+          <div id="resendbtn" class="resendbtn d-flex align-items-center justify-content-center " onclick="gorating()">
+            <p>Publish Profile</p>
+            <img src="./Assest/Vector.svg" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="tab">
+        <div class="card-body d-flex flex-column justify-content-center align-items-center " style="gap: 2rem;margin-top: 1rem;">
+          <h5 class="card-title" style="font-size: 30px; font-weight: 600;">Congratulations!</h5>
+          <div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="card-text mt-3" style="font-size: 13px; font-weight: 700;color: #13BF24;
+        ">Your Score Is Now 230!</p>
+          </div>
+
+          <div id="resendbtn" class="resendbtn d-flex align-items-center justify-content-center " onclick="goadmin()">
+            <p>Go To Home</p>
+            <img src="./Assest/Vector.svg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    var pagecount = 0;
+    var TotalPageCount = [0, 1, 2];
+
+    const tabs = Array.from(document.querySelectorAll('.tab'));
+    const pagination = document.querySelector('.pagination');
+    const resendbtn = document.getElementById(".resendbtn")
+    
+    function slide() {
+      if (pagecount == 0) {
+
+        pagecount = 1;
+        tabs.forEach(tab => tab.classList.remove('active'));
+        tabs[pagecount].classList.add('active');
+
+      }
+      else if (pagecount == 1) {
+
+        pagecount = 2;
+        gorating();
+       
+      }
+      else if (pagecount == 2) {
+        window.location.href = "signin.html"
+      }
+    }
+
+    function gorating(){
+          tabs.forEach(tab => tab.classList.remove('active'));
+        tabs[2].classList.add('active');
+        }
+
+
+
+
+    // Select all elements with the "i" tag and store them in a NodeList called "stars"
+    const stars = document.querySelectorAll(".stars i");
+
+    // Loop through the "stars" NodeList
+    stars.forEach((star, index1) => {
+      // Add an event listener that runs a function when the "click" event is triggered
+      star.addEventListener("click", () => {
+        // Loop through the "stars" NodeList Again
+        stars.forEach((star, index2) => {
+          // Add the "active" class to the clicked star and any stars with a lower index
+          // and remove the "active" class from any stars with a higher index
+          index1 >= index2 ? star.classList.add("active") : star.classList.remove("active");
+        });
+      });
+    });
+
+
+
+  </script>
+
+
+
+
+</body>
+
+</html>

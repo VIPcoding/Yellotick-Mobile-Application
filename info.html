@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Basic Details</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div class="mainlogo container d-flex flex-column  align-items-center">
+        <img class="stepmainlogo" src="./Assest/yellotickmainlogo.svg" alt="YelloTick Logo">
+        <!-- <img src="./Assest/step1.png" alt=""> -->
+        <div class="pagination">
+            <div class="number active" data-step>
+                <p>Step 1</p>
+            </div>
+            <div class="bar" data-step></div>
+            <div class="number" data-step>
+                <p>Step 2</p>
+            </div>
+            <div class="bar" data-step></div>
+            <div class="number" data-step>
+                <p>Step 3</p>
+            </div>
+            <div class="bar" data-step></div>
+            <div class="number" data-step>
+                <p>Step 4</p>
+            </div>
+            <div class="bar" data-step></div>
+            <div class="number" data-step>
+                <p>Step 5</p>
+            </div>
+        </div>
+    </div>
+    <div class="input-container-form  d-flex  justify-content-center  ">
+        <form data-multi-step class="multistep-form">
+
+            <div class="tab active" data-step>
+                <p class="formtitle">Basic Details</p>
+                <div class="input-container1-form" style="margin-top: -1rem;">
+                    <input type="text" placeholder="Full Name" id="Full_name" oninput="toggleStarVisibility(this)">
+                    <i class="fa fa-star fa-20x" style="color: #FFA500;" aria-hidden="true"></i>
+                </div>
+                <div class="input-container1-form">
+                    <input type="text" placeholder="Business Name" id="Business_name"
+                        oninput="toggleStarVisibility(this)">
+                    <i class="fa fa-star fa-20x" style="color: #FFC40C;" aria-hidden="true"></i>
+                </div>
+
+                <div class="input-container1-form">
+                    <input type="email" placeholder="Email Address" id="Email_Address"
+                        oninput="toggleStarVisibility(this)">
+                    <i class="fa fa-star fa-20x" style="color: #FFC40C;" aria-hidden="true"></i>
+                </div>
+
+                <div class="input-container1-form" >
+                    <input type="text" id="businessCategory" placeholder="Business Category" readonly>
+                    <div class="dropdown-list d-flex  align-items-center justify-content-center" id="categorytoggle">
+                        <img src="./Assest/Double Down black.png" alt="">
+                    </div>
+                </div>
+
+                <div id="Businesslist" class="businessmenuList" style="display: none;">
+                    <div class="tooltip-arrow"></div>
+                    <ul class="d-flex flex-column align-items-center " id="categoryList">
+
+                        <li class="d-flex ">
+                            <p>Apparel & Textile</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory" value="Apparel & Textile">
+                            </div>
+                        </li>
+
+                        <li class="d-flex text-start">
+                            <p>Interior Designers & decorators</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+
+                        <li class="d-flex ">
+                            <p>Stationary</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+
+                        <li class="d-flex ">
+                            <p>Footwear</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Civil Contractors/ Architect</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Events/ Wedding Planners</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Real Estate</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Hardware</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Industrial Material Supplies</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Professionals</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Saloon/ Nail Parlour / MUA</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Caterers</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Florists</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Baraat Bands</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Music Bands</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Pre-Rented Cars/ Taxi Services</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Clinics</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Furniture</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Automobiles / Accesories</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Repairs</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Movers & Packers</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Scrap Vendors</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Home Services</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Testing Labs</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Plant Nursery / Garden Services</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Sports & Fitness</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Tattoo Parlors</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Meat Shops</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Gift/ Toy Shops</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Pet Shops/ Vet Clinics</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Medical SUpplies</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="d-flex " style="justify-content: flex-start;">
+                            <p>Electricals & Home Appliances</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="input-container1-form">
+                    <input type="text" placeholder="Contact Number" id="Conatact_Number"
+                        oninput="toggleStarVisibility(this)">
+                    <i class="fa fa-star fa-20x" style="color: #FFC40C;" aria-hidden="true"></i>
+                </div>
+
+                <div class="input-container1-form">
+                    <input type="text" placeholder="Whatsapp Number" id="Whatsapp_Number"
+                        oninput="toggleStarVisibility(this)">
+                    <i class="fa fa-star fa-20x" style="color: #FFC40C;" aria-hidden="true"></i>
+                </div>
+                <div class="input-container1-form">
+                    <input type="text" placeholder="Business location" id="Business_location"
+                        oninput="toggleStarVisibility(this)">
+                    <i class="fa fa-star fa-20x" style="color: #FFC40C;" aria-hidden="true"></i>
+                </div>
+            </div>
+
+
+            <div class="tab " data-step>
+                <p class="formtitle" style="margin-left: -5rem;">Social & Payment Details</p>
+                <div class="input-container1-form" style="margin-top: -1rem;">
+                    <input type="text" placeholder="Just Dial/ Indiamart URL" id="indiamart_url">
+
+                </div>
+                <div class="input-container1-form">
+                    <input type="text" placeholder="Amazon/Flipkart Store URl" id="flipkart_url">
+
+                </div>
+
+                <div class="input-container1-form">
+                    <input type="email" placeholder="Any Other Social Link" id="sociallink_url">
+
+                </div>
+
+                <div class="input-container1-form">
+                    <input type="text" placeholder="Business Website URL" id="business_website_url">
+
+                </div>
+                <input type="file" id="fileInput" style="display: none;" onchange="displayFileName(this)">
+                <div class="input-container1-form">
+                    <input type="text" id="fileDisplay" placeholder="Upload Payment QR Code"
+                        accept="image/png, image/jpeg" readonly>
+                    <i class="fa-regular fa-images" style="font-weight: 400;position: absolute;right: 2rem;"
+                        onclick="openfile(this)"></i>
+                </div>
+
+                <div class="input-container1-form">
+                    <input class="socilalink" type="text" placeholder="Payment  Id" id="payment_id">
+                    <div class="paymenticon">
+                        <img src="./Assest/Phone Pe.png" alt="">
+                        <img src="./Assest/Google Pay.png" alt="">
+                        <img src="./Assest/Paytm.png" alt="">
+                    </div>
+                </div>
+                <input type="file" id="fileInput" style="display: none;">
+                <div class="input-container1-form">
+                    <input type="text" placeholder="Any Other UPI Id" id="upi_id" oninput="toggleStarVisibility(this)">
+                    <i class="fa fa-star fa-20x" style="color: #FFC40C;" aria-hidden="true"></i>
+                </div>
+            </div>
+
+            <div class="tab" data-step>
+                <p class="formtitle" style="margin-left: -8rem;">Business Details</p>
+                <div class="input-container1-form" style="margin-top: -1rem;">
+                    <input type="text" placeholder="Number of Employees" id="number_of_employees">
+                </div>
+                <div class="input-container1-form">
+                    <input type="text" id="turnovercategory" placeholder="Turnover Yearly">
+                    <div class="dropdown-list d-flex  align-items-center justify-content-center" id="turnovertoogle">
+                        <img src="./Assest/Double Down black.png" alt="">
+                    </div>
+                </div>
+                <div id="turnoverdetail" class="businessdetailmenuList" style="display: none;">
+                    <div class="tooltip-arrow"></div>
+                    <ul class="d-flex flex-column align-items-center justify-content-center" id="moneyragne_list">
+
+                        <li class="d-flex ">
+                            <p>Below 20 Lac</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="businessdetail-tooltip-step">
+                            <p class="horizontal-line"></p>
+                        </li>
+                        <li class="d-flex text-start">
+                            <p>Below 1 Cr</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="businessdetail-tooltip-step">
+                            <p class="horizontal-line"></p>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Below 5 Cr</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="businessdetail-tooltip-step">
+                            <p class="horizontal-line"></p>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Below 10 Cr</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="businessdetail-tooltip-step">
+                            <p class="horizontal-line"></p>
+                        </li>
+                        <li class="d-flex ">
+                            <p>Below 50 Cr</p>
+                            <div class="radio-btn-div">
+                                <input type="radio" name="selectcategory">
+                            </div>
+                        </li>
+                        <li class="Businesslist-tooltip-step">
+                            <p class="horizontal-line"></p>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="input-container1-form">
+                    <input type="text" id="shopImages" accept="image/png, image/jpeg" readonly
+                        placeholder="Upload Images of Shop">
+                    <i class="fa fa-star fa-20x star-with-image" style="color: #FFC40C;" aria-hidden="true"></i>
+                    <i class="fa-regular fa-images" style="font-weight: 400;position: absolute;right: 2rem;"
+                        onclick="openFileInput('shopImages')"></i>
+                </div>
+
+                <div class="input-container1-form">
+                    <input type="text" id="rentalAgreement" accept="image/png, image/jpeg" readonly
+                        placeholder="Upload Rental Agreement">
+                    <i class="fa-regular fa-images" style="font-weight: 400;position: absolute;right: 2rem;"
+                        onclick="openFileInput('rentalAgreement')"></i>
+                </div>
+
+                <div class="input-container1-form">
+                    <input type="text" id="shopAct" accept="image/png, image/jpeg" readonly
+                        placeholder="Upload Shop Act">
+                    <i class="fa-regular fa-images" style="font-weight: 400;position: absolute;right: 2rem;"
+                        onclick="openFileInput('shopAct')"></i>
+                </div>
+
+                <div class="input-container1-form">
+                    <input type="text" id="msmeCertificate" accept="image/png, image/jpeg" readonly
+                        placeholder="Upload MSME certificate">
+                    <i class="fa-regular fa-images" style="font-weight: 400;position: absolute;right: 2rem;"
+                        onclick="openFileInput('msmeCertificate')"></i>
+                </div>
+                <div class="input-container1-form">
+                    <input type="text" id="gstCertificate" accept="image/png, image/jpeg" readonly
+                        placeholder="Upload GST Certificate">
+                    <i class="fa-regular fa-images" style="font-weight: 400;position: absolute;right: 2rem;"
+                        onclick="openFileInput('gstCertificate')"></i>
+
+                </div>
+                <input type="file" id="fileInput2" style="display: none;" onchange="displayName()">
+            </div>
+
+            <div class="tab" data-step>
+                <div class="d-flex align-items-center justify-content-center iamge-text w-100"
+                    style="margin-top: 5rem;">
+                    <img src="./Assest/camera.png" alt="">
+                    <p class="formtitle mt-0">Capture Photo&nbsp;<span>*</span></p>
+                </div>
+                <div class="input-container1-form  ">
+                    <input class="imageupload" type="text" oninput="toggleStarVisibility(this)">
+                    <img src="./Assest/uploadphoto.png" alt="" style="position: absolute;">
+                </div>
+            </div>
+            <div class="request d-flex align-items-center justify-content-center mb-4 mt-3" style="    position: absolute;
+            top: 35rem;">
+                <div class="form-btn d-flex align-items-center justify-content-center" id="logbtn">
+                    <button type="button" id="toggleButton" class="custom-button"><span>Next</span>
+                        <i class="fa-solid fa-chevron-right" id="swipeButton" onmousemove="move()"></i></button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    </div>
+    </div>
+    </main>
+
+    <script>
+        var pagecount = 0;
+        var TotalPageCount = [0, 1, 2, 3];
+
+        let elem = document.getElementById('toggleButton');
+        let div = document.getElementById('swipeButton');
+        let oldX = 0;
+        let originalLeft = div.offsetLeft;
+
+
+        /*function for busineess category list */
+        document.addEventListener("DOMContentLoaded", function () {
+            var categorytoggle = document.getElementById("categorytoggle");
+            var Businesslist = document.getElementById("Businesslist");
+            const radioButtons = document.querySelectorAll('input[type="radio"][name="selectcategory"]');
+            const inputField = document.getElementById('businessCategory');
+
+            categorytoggle.addEventListener("click", function () {
+                if (Businesslist.style.display === "none" || Businesslist.style.display === "") {
+                    Businesslist.style.display = "block";
+                    // Add event listener to each radio button
+                    radioButtons.forEach(function (radioButton) {
+                        radioButton.addEventListener('change', function () {
+                            // Check if the radio button is checked
+                            if (this.checked) {
+                                // Update the value of the input field with the text content of the corresponding <p> tag
+                                inputField.value = this.parentElement.previousElementSibling.textContent;
+                                Businesslist.style.display = "none";
+                            }
+                        });
+                    });
+
+                } else {
+                    Businesslist.style.display = "none";
+                }
+            });
+        });
+
+        /* function for star icon visible*/
+        function toggleStarVisibility(input) {
+            const star = input.parentElement.querySelector('.fa-star'); // Selecting sibling star icon
+            if (input.value.trim() !== '') {
+                star.style.display = 'none'; // Hide the star if input is not empty
+            } else {
+                star.style.display = 'inline-block'; // Show the star if input is empty
+            }
+        }
+
+
+        /*function for swipe*/
+        function moverclass() {
+            function start(e) {
+                mousedown = true;
+                let clientX = e.clientX || e.touches[0].clientX;
+
+                oldX = clientX - div.offsetLeft;
+
+            }
+
+            function end(e) {
+                let offsetraange = div.offsetLeft + div.offsetWidth;
+
+                mousedown = false;
+                div.style.left = 13 + 'px';
+                if (offsetraange >= 260) {
+                    const tabs = Array.from(document.querySelectorAll('.tab[data-step]'));
+                    const pagination = document.querySelector('.pagination');
+                    const numbers = document.querySelectorAll('.pagination .number[data-step]');
+                    const bars = document.querySelectorAll('.pagination .bar[data-step]');
+
+                    if (pagecount == 0) {
+                        var full_name = $('#Full_name').val();
+                        var businees_name = $('#Business_name').val();
+                        var email = $('#Email_Address').val();
+                        var businessCategory = $('#businessCategory').val();
+                        var contact = $('#Conatact_Number').val();
+                        var whatsapp = $('#Whatsapp_Number').val();
+                        var business_location = $('#Business_location').val();
+
+                        if (full_name == '' || businees_name == '' || email == '' || businessCategory == '' || contact == '' || whatsapp == '' || business_location == '') {
+                            datacaptured = false;
+                        }
+                        else {
+                            pagecount = 1;
+                            tabs.forEach(tab => tab.classList.remove('active'));
+                            tabs[pagecount].classList.add('active');
+
+                            numbers.forEach((number, index) => {
+
+                                if (index === pagecount) {
+                                    number.classList.add('active');
+                                    number.querySelector('p').style.color = '#CA1F3F';
+                                }
+                            });
+                            bars.forEach((bar, index) => {
+                                if (index === (pagecount - 1)) { // Check against the previous active tab
+                                    bar.classList.add('active');
+                                }
+                            });
+
+                        }
+                    }
+                    else if (pagecount == 1) {
+
+                        var indiamart_url = $('#indiamart_url').val();
+                        var flipkart_url = $('#flipkart_url').val();
+                        var sociallink_url = $('#sociallink_url').val();
+                        var business_website_url = $('#business_website_url').val();
+                        var fileDisplay = $('#fileDisplay').val();
+                        var payment_id = $('#payment_id').val();
+                        var upi_id = $('#upi_id').val();
+                        if (indiamart_url == '' || flipkart_url == '' || sociallink_url == '' || business_website_url == '' || fileDisplay == '' || payment_id == '' || upi_id == '') {
+                            datacaptured = false;
+                        }
+                        else {
+                            pagecount = 2;
+                            tabs.forEach(tab => tab.classList.remove('active'));
+                            tabs[pagecount].classList.add('active');
+                            numbers.forEach((number, index) => {
+
+                                if (index === pagecount) {
+                                    number.classList.add('active');
+                                    number.querySelector('p').style.color = '#CA1F3F';
+                                }
+                            });
+                            bars.forEach((bar, index) => {
+                                if (index === (pagecount - 1)) { // Check against the previous active tab
+                                    bar.classList.add('active');
+                                }
+                            });
+                        }
+                    }
+
+                    else if (pagecount == 2) {
+                        var number_of_employees = $('#number_of_employees').val();
+                        var turnovercategory = $('#turnovercategory').val();
+                        var shopImages = $('#shopImages').val();
+                        var rentalAgreement = $('#rentalAgreement').val();
+                        var shopAct = $('#shopAct').val();
+                        var msmeCertificate = $('#msmeCertificate').val();
+                        var gstCertificate = $('#gstCertificate').val();
+                        if (number_of_employees == '' || turnovercategory == '' || shopImages == '' || rentalAgreement == '' || shopAct == '' || msmeCertificate == '' || gstCertificate == '') {
+                            datacaptured = false;
+                        }
+                        else {
+                            pagecount = 3;
+                            tabs.forEach(tab => tab.classList.remove('active'));
+                            tabs[pagecount].classList.add('active');
+                            numbers.forEach((number, index) => {
+                                
+                                if (index === pagecount) {
+                                    number.classList.add('active');
+                                    number.querySelector('p').style.color = '#CA1F3F';
+                                }
+                            });
+                            bars.forEach((bar, index) => {
+                                if (index === (pagecount - 1)) { // Check against the previous active tab
+                                    bar.classList.add('active');
+                                }
+                            });
+                        }
+                    }
+                    else if (pagecount == 3) {
+                            window.location.href="onbprog.html";
+                    }
+                }
+            }
+
+            function move(e) {
+                if (mousedown) {
+                    let clientX = e.clientX || e.touches[0].clientX;
+                    let newX = clientX - oldX;
+                    let offsetraange = div.offsetLeft + div.offsetWidth;
+                    if (newX >= 0 && newX <= (elem.clientWidth - div.clientWidth)) {
+                        div.style.left = newX + 'px';
+                    }
+                }
+            }
+
+            div.addEventListener('mousedown', start, false);
+            div.addEventListener('touchstart', start, false);
+
+            window.addEventListener('mouseup', end, false);
+            window.addEventListener('touchend', end, false);
+
+            elem.addEventListener('mousemove', move, false);
+            elem.addEventListener('touchmove', move, false);
+
+        }
+
+        document.addEventListener('DOMContentLoaded', moverclass);
+
+
+        /*function for chnage input fled alue when click on upload icon*/
+
+        function openfile() {
+            const fileInput = document.getElementById('fileInput');
+            fileInput.click();
+        }
+
+        function displayFileName() {
+            var fileInput = document.getElementById('fileInput');
+            var fileDisplay = document.getElementById('fileDisplay');
+
+            if (fileInput.files.length > 0) {
+                fileDisplay.value = fileInput.files[0].name;
+            }
+        }
+
+        /* fuunction for business detail input filed*/
+        function openFileInput(inputId) {
+            const fileInput = document.getElementById('fileInput2');
+            fileInput.dataset.targetInput = inputId;
+            fileInput.click();
+        }
+
+        function displayName() {
+            var fileInput = document.getElementById('fileInput2');
+            var fileDisplay = document.getElementById(fileInput.dataset.targetInput);
+            console.log(fileDisplay)
+            if (fileInput.files.length > 0) {
+                fileDisplay.value = fileInput.files[0].name;
+            }
+        }
+
+
+        /*function for toggle turnover list */
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var turnovertoogle = document.getElementById("turnovertoogle");
+            var turnoverdetail = document.getElementById("turnoverdetail");
+            const radioButtons = document.querySelectorAll('input[type="radio"][name="selectcategory"]');
+            const inputField = document.getElementById('turnovercategory');
+
+            turnovertoogle.addEventListener("click", function () {
+                console.log("click")
+                if (turnoverdetail.style.display === "none" || turnoverdetail.style.display === "") {
+                    turnoverdetail.style.display = "block";
+                    radioButtons.forEach(function (radioButton) {
+                        radioButton.addEventListener('change', function () {
+                            // Check if the radio button is checked
+                            if (element.checked) {
+                                // Update the value of the input field with the text content of the corresponding <p> tag
+                                inputField.value = element.parentElement.previousElementSibling.textContent;
+                                turnoverdetail.style.display = "none";
+                            }
+                        });
+                    });
+                } else {
+                    turnoverdetail.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
